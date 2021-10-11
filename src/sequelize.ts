@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
-//import models from "../src/models";
+import models from "../src/models";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -12,6 +12,6 @@ const sequelize = new Sequelize(POSTGRES_CONNECTION_STRING as string, {
   logging: console.log,
 });
 
-sequelize.addModels([]);
+sequelize.addModels([models.SampleType]);
 
 export default sequelize;

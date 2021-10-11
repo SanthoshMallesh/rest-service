@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --config nodemon.json src/app.ts",
     "sequelize:create-migration": "sequelize migration:create --name",
-    "sequelize:migrate": "sequelize db:migrate"
+    "sequelize:migrate": "sequelize db:migrate",
+    "prestart": "npm run sequelize:migrate",
+    "start": "nodemon --config nodemon.json src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,7 @@
     "@types/pino": "^6.3.11",
     "@types/yup": "^0.29.13",
     "ts-node": "^10.2.1",
-    "typescript": "~4.2.4",
+    "typescript": "^4.2.4",
     "morgan": "^1.9.1"
   },
   "dependencies": {
